@@ -15,10 +15,10 @@ import {
 /**
  * This is a test component for practicing Angular
  * @example
- *      <app-hero-child
- *        [hero]="hero"
- *        [master]="master">
- *      </app-hero-child>
+ *      <test-component
+ *        hero="hero"
+ *        master="master">
+ *      </test-component>
  */
 export class TestComponentComponent implements OnInit, OnChanges {
   // Props
@@ -41,6 +41,10 @@ export class TestComponentComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+  }
+
+  start() { 
+    console.log("start"); 
   }
 
 }

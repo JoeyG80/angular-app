@@ -1,0 +1,10 @@
+<div>
+    <!-- Source to view data bind, use brackets -->
+    <test-component #test [hero]="parentName" [master]="masterText"></test-component>
+    <!-- This will not acknowledge the parentName property and
+         will pass the string you wrote instead -->
+    <test-component hero="parentName" master="hello"></test-component>
+
+    <div (click)="test.start()">Click me to use local variable!</div>
+    <div (click)="start()">Click me to use viewChild!</div>
+  </div>
