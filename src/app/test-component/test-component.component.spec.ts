@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TestComponentComponent } from './test-component.component';
 
 describe('TestComponentComponent', () => {
+  const heroNames = ['Dr IQ', 'Magneta', 'Bombasto'];
+  const masterName = 'Master';
   let component: TestComponentComponent;
   let fixture: ComponentFixture<TestComponentComponent>;
 
