@@ -1,7 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { 
+  Component, 
+  Input, 
+  OnChanges, 
+  OnInit, 
+  SimpleChanges 
+} from '@angular/core';
 
 @Component({
-  selector: 'app-test-component',
+  selector: 'test-component',
   templateUrl: './test-component.component.html',
   styleUrls: ['./test-component.component.less']
 })
@@ -14,7 +20,7 @@ import { Component, Input, OnInit } from '@angular/core';
  *        [master]="master">
  *      </app-hero-child>
  */
-export class TestComponentComponent implements OnInit {
+export class TestComponentComponent implements OnInit, OnChanges {
   // Props
   @Input() hero: string | undefined;
   @Input('master') masterName: string | undefined;
@@ -26,6 +32,13 @@ export class TestComponentComponent implements OnInit {
   private _name = '';
 
   constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const message = Object.keys(changes).find((key) => {
+      return key === "hero" ? changes[key] : "";
+    })
+    console.log(message);
+  }
 
   ngOnInit(): void {
   }
