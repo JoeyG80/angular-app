@@ -5,6 +5,7 @@ import {
   OnInit, 
   SimpleChanges 
 } from '@angular/core';
+import { HeroService } from '../services/heroes/hero.service';
 
 @Component({
   selector: 'test-component',
@@ -30,8 +31,11 @@ export class TestComponentComponent implements OnInit, OnChanges {
     this._name = this.hero || "";
   }
   private _name = '';
+  test = [""];
 
-  constructor() { }
+  constructor(heroService: HeroService) { 
+    this.test = heroService.getHeroes();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     const message = Object.keys(changes).find((key) => {
@@ -44,7 +48,9 @@ export class TestComponentComponent implements OnInit, OnChanges {
   }
 
   start() { 
-    console.log("start"); 
+    this.test.push("hello");
+    console.log("start" + this.test);
+
   }
 
 }

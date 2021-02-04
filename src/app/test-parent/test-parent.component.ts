@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild} from '@angular/core';
+import { HeroService } from '../services/heroes/hero.service';
 import { TestComponentComponent } from "../test-component/test-component.component";
 
 @Component({
@@ -27,14 +28,18 @@ export class TestParentComponent implements OnInit {
   }
   private _masterText = "";
   parentName = "hi";
+  test = [""];
 
-  constructor() { }
+  constructor(heroService: HeroService) { 
+    this.test = heroService.getHeroes();
+  }
 
   ngOnInit(): void {
   }
 
   start() {
-    this.childComponent.start();
+    console.warn(this.test)
+    // this.childComponent.start();
   }
 
 }
