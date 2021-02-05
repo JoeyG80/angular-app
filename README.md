@@ -1,3 +1,7 @@
+# Disclaimer: This is a code playground app for learning Angular.
+# It does not currently serve any other purpose.
+# Code is not written in a way that is reflective of competancy.
+
 # AngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
