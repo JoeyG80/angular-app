@@ -5,10 +5,12 @@
          will pass the string you wrote instead -->
     <test-component hero="parentName" master="hello"></test-component>
 
+    <!-- Notice that methods on test are accessible. This is calling methods off the first test-component -->
     <div (click)="test.start()">Click me to use local variable!</div>
     
     <div (click)="start()">Click me to use viewChild!</div>
 
+    <!-- Demonstrates two way databinding -->
     <test-component [(size)]="size" (sizeChange)="size=$event"></test-component>
     <div>{{size}}</div>
   </div>
