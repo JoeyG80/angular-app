@@ -6,5 +6,9 @@
     <test-component hero="parentName" master="hello"></test-component>
 
     <div (click)="test.start()">Click me to use local variable!</div>
+    
     <div (click)="start()">Click me to use viewChild!</div>
+
+    <test-component [(size)]="size" (sizeChange)="size=$event"></test-component>
+    <div>{{size}}</div>
   </div>

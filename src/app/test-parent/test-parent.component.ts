@@ -29,6 +29,7 @@ export class TestParentComponent implements OnInit {
   private _masterText = "";
   parentName = "hi";
   test = [""];
+  size = "2px";
 
   constructor(heroService: HeroService) { 
     this.test = heroService.getHeroes();
@@ -41,5 +42,4 @@ export class TestParentComponent implements OnInit {
     console.warn(this.test)
     // this.childComponent.start();
   }
-
 }

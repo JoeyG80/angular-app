@@ -1,8 +1,10 @@
 import { 
   Component, 
+  EventEmitter, 
   Input, 
   OnChanges, 
   OnInit, 
+  Output, 
   SimpleChanges 
 } from '@angular/core';
 import { HeroService } from '../services/heroes/hero.service';
@@ -25,6 +27,8 @@ export class TestComponentComponent implements OnInit, OnChanges {
   // Props
   @Input() hero: string | undefined;
   @Input('master') masterName: string | undefined;
+  @Input() size: string | undefined;
+  @Output() sizeChange = new EventEmitter<string>();
 
   get name(): string { return this._name; }
   set name(name: string) {
@@ -51,6 +55,12 @@ export class TestComponentComponent implements OnInit, OnChanges {
     this.test.push("hello");
     console.log("start" + this.test);
 
+  }
+
+  // Emits an event related to two way databinding
+  resize() {
+    this.size = "5px";
+    this.sizeChange.emit(this.size);
   }
 
 }
