@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild} from '@angular/core';
 import { HeroService } from '../services/heroes/hero.service';
 import { TestComponentComponent } from "../test-component/test-component.component";
-
+import {ViewRulesetsComponent} from "../components/view-rulesets/view-rulesets.component";
 @Component({
   selector: 'test-parent',
   templateUrl: './test-parent.component.html',
