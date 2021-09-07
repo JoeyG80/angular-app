@@ -7,7 +7,7 @@
 
     <!-- Notice that methods on test are accessible. This is calling methods off the first test-component -->
     <div (click)="test.start()">Click me to use local variable!</div>
-    
+
     <div (click)="start()">Click me to use viewChild!</div>
 
     <!-- Demonstrates two way databinding -->
@@ -15,4 +15,10 @@
     <div>{{size}}</div>
 
     <app-view-rulesets></app-view-rulesets>
+
+    <div>
+      <h1>Press this button to use a subject to update Child components</h1>
+      <button (click)="changeNumber()">Change Number</button>
+      <app-child-two></app-child-two>
+    </div>
   </div>
