@@ -7,6 +7,7 @@ import { TestComponentComponent } from './test-component/test-component.componen
 import { TestParentComponent } from './test-parent/test-parent.component';
 import { ViewRulesetsComponent } from './components/view-rulesets/view-rulesets.component';
 import { ChildTwoComponent } from './components/child-two/child-two.component';
+import { TestSubjectObjectsComponent } from './components/test-subject-objects/test-subject-objects.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ChildTwoComponent } from './components/child-two/child-two.component';
     TestParentComponent,
     ViewRulesetsComponent,
     ChildTwoComponent,
+    TestSubjectObjectsComponent,
   ],
   imports: [
     BrowserModule,

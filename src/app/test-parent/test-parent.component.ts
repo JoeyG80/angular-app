@@ -5,6 +5,8 @@ import {ViewRulesetsComponent} from '../components/view-rulesets/view-rulesets.c
 import { ChildTwoComponent } from '../components/child-two/child-two.component';
 import { Observable, Subject } from 'rxjs';
 import { NumberService } from '../services/number/number.service';
+import { TableDataService } from '../services/table-data/table-data.service';
+
 @Component({
   selector: 'test-parent',
   templateUrl: './test-parent.component.html',
@@ -26,6 +28,7 @@ export class TestParentComponent implements OnInit {
   private childComponent!: TestComponentComponent;
   private _masterText = "";
   public data: Subject<number>;
+  public tableData: Subject<any>
 
   get masterText(): string {return this._masterText;}
   set masterText(name: string) {
@@ -35,9 +38,12 @@ export class TestParentComponent implements OnInit {
   test = [""];
   size = "2px";
 
-  constructor(heroService: HeroService, numberService: NumberService) {
+  constructor(heroService: HeroService,
+              numberService: NumberService,
+              tableDataService: TableDataService) {
     this.test = heroService.getHeroes();
     this.data = numberService.getNumber();
+    this.tableData = tableDataService.getData();
   }
 
   ngOnInit(): void {
@@ -51,5 +57,13 @@ export class TestParentComponent implements OnInit {
 
   changeNumber() {
     this.data.next(Math.random())
+  }
+
+  changeTableData() {
+    this.tableData.next({
+      a: Math.random(),
+      b: Math.random(),
+      f: Math.random(),
+    })
   }
 }
