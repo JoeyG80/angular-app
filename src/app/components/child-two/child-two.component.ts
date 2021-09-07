@@ -7,6 +7,10 @@ import { NumberService } from 'src/app/services/number/number.service';
   templateUrl: './child-two.component.html',
   styleUrls: ['./child-two.component.less']
 })
+
+/**
+ * This component demonstrates an implementation of an observer
+ */
 export class ChildTwoComponent implements OnInit {
   public data: Subject<number>;
   public number: number;

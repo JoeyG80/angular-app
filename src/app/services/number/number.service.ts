@@ -4,6 +4,9 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * This class demonstrates the use of an observable.
+ */
 export class NumberService {
   public data: Subject<number>;
 
